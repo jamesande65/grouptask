@@ -8,26 +8,27 @@
 <body>
 <div class="audio_player">
     <div class="audio_panel container">
-        <audio class="" src=""></audio>
-
-        <button class="audio__button toggle" title="Toggle Play">►</button>
-        <button class="player__button toggle" title="Toggle Stop">S</button>
+        <audio controls="" class="audio__link" src=""></audio>
+        <div class="progress">
+            <div class="progress__filled"></div>
+        </div>
+        <div class="controls">
+            <button class="audio__button toggle" title="Toggle Play">►</button>
+            <button class="player__button toggle" title="Toggle Stop"><span>■</span></button>
+        </div>
     </div>
     <div class="playlist container">
-        <div class="control_btn">
+        <ul class="list_songs"></ul>
+        <div class="controls">
             <input type="file" id="load-file"> <!-- todo hide the input -->
-            <button class="add">Add</button>
-            <button class="sort">Sort</button>
+            <button class="add color">Add</button>
+            <button class="sort color">Sort</button>
         </div>
-        <ul class="list_songs">
-            <li class="song"></li>
-            <li class="song"></li>
-            <li class="song"></li>
-        </ul>
     </div>
 </div>
 
 
-<script src="js/script.js"></script>
+<script src="js/controls.js"></script>
+<script src="js/list.js"></script>
 </body>
 </html>
