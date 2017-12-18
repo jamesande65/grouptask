@@ -47,7 +47,7 @@ function stopAudio() {
 function playChosenSong(ev) {
     let cleanUrl = this.innerText;
     cleanUrl = cleanUrl.replace('C:\\fakepath\\', '');
-    cleanUrl = '..\\audio\\' + cleanUrl;
+    cleanUrl = 'audio\\' + cleanUrl;
     theAudioSource.src = cleanUrl;
     theAudio.play();
 }
