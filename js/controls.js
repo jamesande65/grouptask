@@ -3,6 +3,7 @@ let stopButton = document.querySelector('.player__button');
 let progressLine = document.querySelector('.progress__filled');
 let progressParent = document.querySelector('.progress');
 let theAudio = document.querySelector('audio');
+let songList = document.querySelectorAll('li');
 
 
 
@@ -42,6 +43,14 @@ function stopAudio() {
     progressLine.style.flexBasis = 0;
 }
 
+function playChosenSong(ev) {
+    let cleanUrl = this.innerText;
+    cleanUrl = cleanUrl.replace('C:\\fakepath\\', '');
+    cleanUrl = '..\\audio\\' + cleanUrl;
+    theAudio.src = cleanUrl;
+    theAudio.play();
+}
+
 playButton.addEventListener('click', togglePlay);
 stopButton.addEventListener('click', stopAudio);
 stopButton.addEventListener('click', togglePlayButton);
@@ -52,3 +61,4 @@ theAudio.addEventListener('pause', togglePlayButton);
 theAudio.addEventListener('timeupdate', progress);
 progressParent.addEventListener('mousedown', handleProgress);
 
+songList.forEach((li) => {li.addEventListener('click', playChosenSong)});

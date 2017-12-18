@@ -2,6 +2,8 @@ let buttonAdd = document.querySelector('.add');
 let fileInput = document.querySelector('#load-file');
 let listSongs = document.querySelector('.list_songs');
 
+synchrPlayList();
+
 buttonAdd.addEventListener('click', chooseSong);
 fileInput.addEventListener('change', addSong);
 
@@ -40,3 +42,4 @@ function synchrPlayList(song) {
         });
     }
 }
+
