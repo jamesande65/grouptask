@@ -3,6 +3,7 @@ let stopButton = document.querySelector('.player__button');
 let progressLine = document.querySelector('.progress__filled');
 let progressParent = document.querySelector('.progress');
 let theAudio = document.querySelector('audio');
+let theAudioSource = document.querySelector('source');
 let songList = document.querySelectorAll('li');
 
 
@@ -47,7 +48,7 @@ function playChosenSong(ev) {
     let cleanUrl = this.innerText;
     cleanUrl = cleanUrl.replace('C:\\fakepath\\', '');
     cleanUrl = '..\\audio\\' + cleanUrl;
-    theAudio.src = cleanUrl;
+    theAudioSource.src = cleanUrl;
     theAudio.play();
 }
 
