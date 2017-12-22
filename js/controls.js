@@ -9,7 +9,7 @@ let songList = document.querySelectorAll('li');
 
 
 
-function togglePlay(ev) {
+function togglePlay() {
     let method = theAudio.paused ? 'play': 'pause';
     theAudio[method]();
 }
@@ -28,9 +28,6 @@ function setCurrentTime(current) {
     if (!isNaN(theAudio.duration)) {
         theAudio.currentTime = current;
     }
-    console.log(theAudio);
-    console.log(theAudio.duration);
-    console.log(theAudio.currentTime);
 }
 
 function togglePlayButton() {
@@ -41,14 +38,15 @@ function stopAudio() {
     let method = 'pause';
     theAudio[method]();
     theAudio.load();
-    progressLine.style.flexBasis = 0;
+    progressLine.style.flexBasis = `0`;
 }
 
-function playChosenSong(ev) {
+function playChosenSong() {
     let cleanUrl = this.innerText;
     cleanUrl = cleanUrl.replace('C:\\fakepath\\', '');
-    cleanUrl = 'audio\\' + cleanUrl;
+    cleanUrl = '..\\audio\\' + cleanUrl;
     theAudioSource.src = cleanUrl;
+    theAudio.load();
     theAudio.play();
 }
 
